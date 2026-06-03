@@ -1,0 +1,10 @@
+phpunit.xml
+tests/log
+vendor
+composer.phar
+.DS_Store
+.idea
+.phpunit.result.cache
+infection.html
+# Otherwise we won't be able to install it on different php version.
+composer.lock

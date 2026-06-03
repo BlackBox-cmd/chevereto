@@ -1,0 +1,43 @@
+<?php
+
+/*
+ * This file is part of Chevere.
+ *
+ * (c) Rodolfo Berrios <rodolfo@chevere.org>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
+
+namespace Chevere\Http\Interfaces;
+
+use Chevere\Parameter\Interfaces\CastInterface;
+use IteratorAggregate;
+
+/**
+ * @extends IteratorAggregate<int|string>
+ */
+interface StatusInterface extends IteratorAggregate
+{
+    /**
+     * Provides access to the success status code.
+     */
+    public function success(): CastInterface;
+
+    /**
+     * Provides access to named codes.
+     */
+    public function code(string $name): CastInterface;
+
+    /**
+     * @return array<int|string>
+     */
+    public function codes(): array;
+
+    /**
+     * @return array<int|string>
+     */
+    public function toArray(): array;
+}
